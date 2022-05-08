@@ -1,14 +1,10 @@
 import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
+import { Board } from "./components/Board";
 
 function App(props) {
-  return (
-    <div className="App">
-      <pre>{JSON.stringify(props, null, 2)}</pre>
-      <button onClick={() => props.addRandomTodo()}>Add todo</button>
-    </div>
-  );
+  return (<Board></Board>);
 }
 
 const mapStateToProps = (state) => ({ state: state, hola: 44 });

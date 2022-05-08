@@ -1,0 +1,23 @@
+.card-container {
+    max-height: 20vh;
+    min-height: 10vh;
+    min-width: 90%;
+    margin: 10px;
+    background-color: white;
+    color: var(--bg-dark-color);
+    margin: 20px 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.card-container:hover { 
+    box-shadow: 0px 10px 13px -7px var(--bg-dark-color);
+}
+
+.card-title{
+    font-size: larger;
+}
+
+.card-description {
+    text-overflow: ellipsis;
+}
