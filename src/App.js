@@ -9,13 +9,7 @@ function App(props) {
 
 const mapStateToProps = (state) => ({ state: state, hola: 44 });
 
-const mapDispatchToProps = (dispacth) => ({
-  addRandomTodo: () =>
-    dispacth({
-      type: "ADD_TODO",
-      payload: "borra esta tarea!",
-    }),
-});
+const mapDispatchToProps = (dispacth) => ({});
 
 const connectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
