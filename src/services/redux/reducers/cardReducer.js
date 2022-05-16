@@ -6,7 +6,7 @@ export const card = (state = initialState, action) => {
 
       case "ADD_CARD": {
         const { cardText, cardId } = action.payload;
-        return { ...state, [cardId]: { text: cardText, _id: cardId } };
+        return { ...state, [cardId]: { text: cardText, id: cardId } };
       }
 
       case "EDIT_CARD_TEXT": {

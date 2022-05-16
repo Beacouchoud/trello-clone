@@ -1,14 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "../static/styles/card.css";
 import { Button } from "./Button";
 import { Tag } from "./Tag";
 
-export const Card = (props) => {
+export const Card = ({cardId}) => {
+
+    const dispatch = useDispatch();
+    const card = useSelector((state) => state.card[cardId]);
+
     return (
         <div className="card-container">
-            <p className="card-title">{props.title}</p>
-            <p className="card-description">{props.description}</p>
-            {props.tag && <Tag text={props.tag} color={props.color}></Tag>}
+            <p className="card-description">{card.text}</p>
         </div>
     );
 };

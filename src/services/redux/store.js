@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { generateSampleData } from "../utils.js";
 import reducer from "./reducers/reducer.js";
 
 const saveState = (state) => {
@@ -46,5 +47,9 @@ store.subscribe(() => {
     1000
   );
 });
+
+if (!store.getState().board.columns.length) {
+  generateSampleData(store);
+}
 
 export default store;

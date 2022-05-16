@@ -8,7 +8,7 @@ export const column = (state = initialState, action) => {
         const { id, title } = action.payload;
         return {
           ...state,
-          [id]: { _id: id, title: title, cards: [] }
+          [id]: { id: id, title: title, cards: [] }
         };
       }
 

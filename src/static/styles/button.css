@@ -1,6 +1,6 @@
 button {
-    height: min-content;
-    margin: auto;
+  height: min-content;
+  margin: 15px 10px;
   background-image: linear-gradient(
     60deg,
     hsl(187deg 100% 74%) 0%,
@@ -8,19 +8,17 @@ button {
     hsl(119deg 100% 73%) 50%,
     hsl(60deg 100% 76%) 100%
   );
-  background-position: 100% 0;
-  background-size: 150% 150%;
-  border-radius: 50px;
+  background-position: 0% 0;
+  background-size: 200% 200%;
+  border-radius: 10px;
   border: none;
   padding: 12px 48px;
   font-size: 16px;
   font-weight: 200;
-  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   color: var(--bg-dark-color);
 }
 
 button:hover {
-  box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
-  background-position: 0 0;
+  background-position: 100% 0;
 }
