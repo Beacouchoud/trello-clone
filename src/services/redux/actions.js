@@ -1,54 +1,59 @@
-export const addColumn = (dispatch) => (id, title) =>
-  dispatch({
+export const addColumn = (id, title) => {
+  return {
     type: "ADD_COLUMN",
     payload: {
       id,
       title,
     },
-  });
+  };
+};
 
-export const removeColumn = (dispatch) => (columnId, cardsId) =>
-    dispatch({
+export const removeColumn = (columnId) => {
+  return {
     type: "REMOVE_COLUMN",
     payload: {
-        columnId,
-        cardsId
+      columnId,
     },
-});
+  };
+};
 
-export const editColumnTitle = (dispatch) => (id, title) =>
-    dispatch({
+export const editColumnTitle = (id, title) => {
+  return {
     type: "EDIT_COLUMN_TITLE",
     payload: {
-        id,
-        title
+      id,
+      title,
     },
-});
+  };
+};
 
-export const addCard = (dispatch) => (columnId, cardId, cardText) => 
-    dispatch({
-        type: "ADD_CARD",
-        payload: {
-            columnId,
-            cardId,
-            cardText
-        }
-    });
+export const addCard = (columnId, cardId, cardText) => {
+  return {
+    type: "ADD_CARD",
+    payload: {
+      columnId,
+      cardId,
+      cardText,
+    },
+  };
+};
 
-export const removeCard = (dispatch) => (columnId, cardId) => 
-    dispatch({
-        type: "REMOVE_CARD",
-        payload: {
-            columnId,
-            cardId,
-        }
-    });
+export const removeCard = (columnId, cardId) => {
+  return {
+    type: "REMOVE_CARD",
+    payload: {
+      columnId,
+      cardId,
+    },
+  };
+};
 
-export const editCardText = (dispatch) => (id, text) => 
-    dispatch({
-        type: "EDIT_CARD_TEXT",
-        payload: {
-            id, text
-        }
-    });
-
+export const editCardText = (id, text) => {
+  return {
+    type: "EDIT_CARD_TEXT",
+    payload: {
+      id,
+      text,
+    },
+  };
+};

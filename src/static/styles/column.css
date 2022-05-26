@@ -2,7 +2,7 @@
   min-height: 80vh;
   max-height: 80vh;
   width: 20vw;
-  min-width: 10vw;
+  min-width: 15vw;
   margin: 20px;
   background-color: var(--bg-light-color);
   color: var(--bg-dark-color);
@@ -10,6 +10,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   overflow-y: auto;
+  
   scrollbar-width: none;
 
   text-align-last: center;

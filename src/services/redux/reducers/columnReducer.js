@@ -29,9 +29,10 @@ export const column = (state = initialState, action) => {
       case "ADD_CARD": {
         const { columnId, cardId } = action.payload;
         return {
-          ...state,
+          ...state, 
           [columnId]: { ...state[columnId], cards: [...state[columnId].cards, cardId] }
         };
+
       }
 
       case "REMOVE_CARD": {

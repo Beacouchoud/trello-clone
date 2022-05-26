@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import '../static/styles/board.css';
 import { Button } from "./Button";
@@ -9,7 +9,10 @@ export const Board = ({ }) => {
 
     const dispatch = useDispatch();
     const board = useSelector(state => state.board);
-
+    const [hideButton, setHideButton] = useState(false);
+    useEffect(() => {
+        (board.columns.length < 5) ? setHideButton(false) : setHideButton(true);
+    }, [board.columns.length]);
     return (
         <div className="board-container">
             <h1>Board Name</h1>
@@ -19,7 +22,7 @@ export const Board = ({ }) => {
                         return <Column columnId={columnId} key={columnId} index={index}></Column>
                     })
                 }
-                <Button type="column"></Button>
+                {hideButton || <Button type="column"></Button>}
             </div>
         </div>
     );

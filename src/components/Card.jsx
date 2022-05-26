@@ -1,17 +1,16 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "../static/styles/card.css";
-import { Button } from "./Button";
-import { Tag } from "./Tag";
+import { EditElement } from "./EditElement";
 
-export const Card = ({cardId}) => {
+export const Card = ({ cardId, columnId }) => {
+  const card = useSelector((state) => state.card[cardId]);
+  const [enableEdit, setEnableEdit] = useState(false);
 
-    const dispatch = useDispatch();
-    const card = useSelector((state) => state.card[cardId]);
-
-    return (
-        <div className="card-container">
-            <p className="card-description">{card.text}</p>
-        </div>
-    );
+  return (
+    <div className="card-container" onClick={() => setEnableEdit(true)}>
+      {(!enableEdit && (<p className="card-description">{card.text || " "}</p>) ||
+      <EditElement type={"card"} setEnableEdit={setEnableEdit} hasTitle={false} text={card.text} cardId={cardId} columnId={columnId}></EditElement>)}
+    </div>
+  );
 };

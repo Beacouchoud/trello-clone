@@ -1,13 +1,13 @@
-let id = 0;
+let id = 10;
 
-export const generateId = (prefix = "id") => {
-    return `${prefix}${++id}`;
+export const generateId = (prefix = "id", num = ++id) => {
+    return `${prefix}${num}`;
 }
 
 export const generateSampleData = (store) => {
 
-    const firstColId = generateId("column");
-    const secondColId = generateId("column");
+    const firstColId = generateId("column", 1);
+    const secondColId = generateId("column", 2);
 
     store.dispatch({
         type: "ADD_COLUMN",
@@ -20,7 +20,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: firstColId,
-            cardId: generateId("card"),
+            cardId: generateId("card",3),
             cardText: "Card nº1"
         }
     });
@@ -29,7 +29,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: firstColId,
-            cardId: generateId("card"),
+            cardId: generateId("card", 4),
             cardText: "This is the second card"
         }
     });
@@ -45,7 +45,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: secondColId,
-            cardId: generateId("card"),
+            cardId: generateId("card", 5),
             cardText: "Card 1"
         }
     });
@@ -54,7 +54,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: secondColId,
-            cardId: generateId("card"),
+            cardId: generateId("card", 6),
             cardText: "Card number 2"
         }
     });
