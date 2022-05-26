@@ -9,8 +9,8 @@
 
   padding-top: 20px;
   padding-bottom: 20px;
-  overflow-y: auto;
-  
+  /* overflow-y: auto; */
+
   scrollbar-width: none;
 
   text-align-last: center;
