@@ -5,6 +5,9 @@ import "../static/styles/column.css";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { EditElement } from "./EditElement";
+import "../static/styles/column.css";
+import "../static/styles/card.css";
+import "../static/styles/button.css";
 
 export const Column = ({ columnId, index }) => {
   const column = useSelector((state) => state.column[columnId]);

@@ -60,6 +60,7 @@ textarea, input {
   margin: auto 5px ;
   color: var(--bg-dark-color);
   font-size: 20px;
+  cursor: pointer; 
 }
 
 .trash {
@@ -99,8 +100,4 @@ button:hover, .input-container:hover {
 
 .new-column {
   margin: 20px 5px;
-}
-
-.icon {
-  cursor: pointer; 
 }

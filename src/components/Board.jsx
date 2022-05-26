@@ -5,6 +5,9 @@ import { moveCard, moveColumn } from "../services/redux/actions";
 import "../static/styles/board.css";
 import { Button } from "./Button";
 import { Column } from "./Column";
+import "../static/styles/column.css";
+import "../static/styles/card.css";
+import "../static/styles/button.css";
 
 export const Board = ({}) => {
   const dispatch = useDispatch();

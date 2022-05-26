@@ -7,8 +7,7 @@
   background-color: var(--bg-light-color);
   color: var(--bg-dark-color);
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   /* overflow-y: auto; */
 
   scrollbar-width: none;
@@ -23,4 +22,8 @@
 .column-name {
   text-align: center;
   text-transform: uppercase;
+}
+
+.edit-column {
+  margin: auto;
 }
