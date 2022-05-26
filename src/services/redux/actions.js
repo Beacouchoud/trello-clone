@@ -57,3 +57,25 @@ export const editCardText = (id, text) => {
     },
   };
 };
+
+export const moveColumn = (oldId, newId) => {
+  return {
+    type: "MOVE_COLUMN",
+    payload: {
+      oldId,
+      newId,
+    },
+  };
+};
+
+export const moveCard = (oldCardId, newCardId, oldColId, newColId) => {
+  return {
+    type: "MOVE_CARD",
+    payload: {
+      oldCardId,
+      newCardId,
+      oldColId,
+      newColId,
+    },
+  };
+};
