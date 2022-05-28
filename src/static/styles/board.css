@@ -1,8 +1,32 @@
+.project-title {
+    text-align: center;
+    background-color: var(--green);
+    color: var(--bg-dark-color);
+    padding: 20px;
+    box-shadow: 0px 15px 20px 0px rgba(108,255,179,0.1);
+    height: 10%;
+}
+
+.main-page-container {
+    background-color: var(--bg-dark-color);
+    max-height: 90%;
+    min-height: 95vh;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: scroll;
+}
+
+.boards-container {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 .board-container {
     height: 100vh;
     width: 100%;
     overflow: auto;
-    background-color: #0D1619;
+    background-color: var(--bg-dark-color);
     color: var(--bg-light-color);
     padding: 25px;
 }
@@ -10,4 +34,68 @@
 .flex-container {
     display: flex;
     margin-top: 5vh;
+}
+
+.button-container {
+    max-width: 20vw;
+    min-width: 20vw;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.board-element-container {
+    width: 20vw;
+    min-width: 150px;
+    min-height: min-content;
+    height: auto;
+    max-height: min-content !important;
+    border-radius: 30px;
+    margin: 20px;
+    padding: 16px;
+    display: grid;
+    grid-template-areas: 
+        'date . .'
+        'name name name'
+        'delete . edit';
+    background-color: var(--bg-light-color);
+    grid-auto-rows: min-content;
+    gap: 50px;
+    overflow-wrap: anywhere;
+}
+
+.creation-date {
+    grid-area: date;
+}
+
+.board-name {
+    grid-area: name;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.delete-board {
+    grid-area: delete;
+    margin-right: auto;
+}
+
+.edit-board-input {
+    grid-area: edit;
+    min-width: max-content !important;
+    max-width: 16vw !important;
+    margin: 20px 25px;
+    margin: auto !important;
+}
+
+.edit-board {
+    grid-area: edit;
+    margin-left: auto;
+    max-width: 20px;
+    margin: auto 5px  auto auto ;
+}
+
+.edit-board .edit-icon{
+    color: var(--blue);
+    
 }

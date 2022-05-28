@@ -48,7 +48,7 @@ store.subscribe(() => {
   );
 });
 
-if (!store.getState().board.columns.length) {
+if (!store.getState().board.length) {
   generateSampleData(store);
 }
 

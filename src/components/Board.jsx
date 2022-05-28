@@ -11,7 +11,8 @@ import "../static/styles/button.css";
 
 export const Board = ({}) => {
   const dispatch = useDispatch();
-  const board = useSelector((state) => state.board);
+  const boardId = "board0";
+  const board = useSelector((state) => state.board[boardId]);
   const [hideButton, setHideButton] = useState(false);
   useEffect(() => {
     board.columns.length < 5 ? setHideButton(false) : setHideButton(true);
@@ -20,7 +21,7 @@ export const Board = ({}) => {
     if (!destination) return;
     if (type === "column") {
       if (source.index !== destination.index) {
-        dispatch(moveColumn(source.index, destination.index));
+        dispatch(moveColumn(boardId, source.index, destination.index));
       }
       return;
     } else {
@@ -37,9 +38,9 @@ export const Board = ({}) => {
           {(provided, snapshot) => (
             <div className="flex-container" ref={provided.innerRef}>
               {board.columns.map((columnId, index) => {
-                return <Column columnId={columnId} key={columnId} index={index}></Column>;
+                return <Column boardId={boardId} columnId={columnId} key={columnId} index={index}></Column>;
               })}
-              {hideButton || <Button type="column"></Button>}
+              {hideButton || <Button type="column" boardId={boardId}></Button>}
               {provided.placeholder}
             </div>
           )}

@@ -5,13 +5,25 @@ export const generateId = (prefix = "id", num = ++id) => {
 }
 
 export const generateSampleData = (store) => {
-
+    const date = new Date().toLocaleDateString("es-ES")
+    const firstBoardId = generateId("board", 0);
+    const secondBoardId = generateId("board", 7);
     const firstColId = generateId("column", 1);
     const secondColId = generateId("column", 2);
+    const thirdColId = generateId("column", 8);
+    store.dispatch({
+        type: "ADD_BOARD",
+        payload: { 
+            id: firstBoardId, 
+            title: "First Board",
+            date: date
+        }
+    });
 
     store.dispatch({
         type: "ADD_COLUMN",
         payload: { 
+            boardId: firstBoardId,
             id: firstColId, 
             title: "First Column" }
     });
@@ -37,6 +49,7 @@ export const generateSampleData = (store) => {
     store.dispatch({
         type: "ADD_COLUMN",
         payload: { 
+            boardId: firstBoardId,
             id: secondColId, 
             title: "Second column" }
     });
@@ -57,5 +70,22 @@ export const generateSampleData = (store) => {
             cardId: generateId("card", 6),
             cardText: "Card number 2"
         }
+    });
+
+    store.dispatch({
+        type: "ADD_BOARD",
+        payload: { 
+            id: secondBoardId, 
+            title: "Second Board",
+            date,
+        }
+    });
+
+    store.dispatch({
+        type: "ADD_COLUMN",
+        payload: { 
+            boardId: secondBoardId,
+            id: thirdColId, 
+            title: "Second column" }
     });
 };

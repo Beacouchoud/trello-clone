@@ -9,7 +9,7 @@ import "../static/styles/column.css";
 import "../static/styles/card.css";
 import "../static/styles/button.css";
 
-export const Column = ({ columnId, index }) => {
+export const Column = ({ boardId, columnId, index }) => {
   const column = useSelector((state) => state.column[columnId]);
   const [enableEdit, setEnableEdit] = useState(false);
 
@@ -42,7 +42,7 @@ export const Column = ({ columnId, index }) => {
               )}
             </Droppable>
 
-            <Button type="card" columnId={columnId}></Button>
+            <Button type="card" boardId={boardId} columnId={columnId}></Button>
           </div>
         );
       }}

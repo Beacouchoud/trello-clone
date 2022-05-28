@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import { Board } from "./components/Board";
+import { BoardsList } from "./components/BoardsList";
 
 function App() {
-  return <Board></Board>;
+  return <BoardsList></BoardsList>;
 }
 
 export default App;

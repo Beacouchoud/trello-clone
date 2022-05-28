@@ -1,7 +1,38 @@
-export const addColumn = (id, title) => {
+export const addBoard = (id, title, date) => {
+  return {
+    type: "ADD_BOARD",
+    payload: {
+      id,
+      title,
+      date,
+    },
+  };
+};
+
+export const editBoardName = (id, name) => {
+  return {
+    type: "EDIT_BOARD_NAME",
+    payload: {
+      id,
+      name,
+    },
+  };
+};
+
+export const removeBoard = (boardId) => {
+  return {
+    type: "REMOVE_BOARD",
+    payload: {
+      boardId,
+    },
+  };
+};
+
+export const addColumn = (boardId, id, title) => {
   return {
     type: "ADD_COLUMN",
     payload: {
+      boardId,
       id,
       title,
     },
@@ -58,10 +89,11 @@ export const editCardText = (id, text) => {
   };
 };
 
-export const moveColumn = (oldId, newId) => {
+export const moveColumn = (boardId, oldId, newId) => {
   return {
     type: "MOVE_COLUMN",
     payload: {
+      boardId,
       oldId,
       newId,
     },
