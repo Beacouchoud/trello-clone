@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { removeBoard } from "../services/redux/actions";
 import { EditElement } from "./EditElement";
+import { Link } from "react-router-dom";
 
 export const BoardElement = ({ boardId }) => {
   const dispatch = useDispatch();
@@ -18,14 +19,12 @@ export const BoardElement = ({ boardId }) => {
     <div className="board-element-container">
       <div className="creation-date">{board.date}</div>
       <div className="board-name">
-        {(!enableEdit && <p>{board.title}</p>) || (
-          <EditElement
-            className="edit"
-            type={"board"}
-            setEnableEdit={setEnableEdit}
-            boardId={boardId}
-            name={board.title}
-          ></EditElement>
+        {(!enableEdit && (
+          <Link to={`/${boardId}`}>
+            {board.title}
+          </Link>
+        )) || (
+          <EditElement className="edit" type={"board"} setEnableEdit={setEnableEdit} boardId={boardId} name={board.title}></EditElement>
         )}
       </div>
       <div className="delete-board">

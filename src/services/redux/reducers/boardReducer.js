@@ -1,5 +1,4 @@
 const initialState = {
-  
   // columns: [],
   // {id: number }
 };
@@ -34,9 +33,9 @@ export const board = (state = initialState, action) => {
     }
 
     case "REMOVE_COLUMN": {
-      const { columnId } = action.payload;
-      const newColumns = state.columns.filter((id) => id !== columnId);
-      return { ...state, columns: newColumns };
+      const { boardId, columnId } = action.payload;
+      const newColumns = state[boardId].columns.filter((id) => id !== columnId);
+      return { ...state, [boardId]: { ...state[boardId], columns: newColumns } };
     }
 
     case "MOVE_COLUMN": {

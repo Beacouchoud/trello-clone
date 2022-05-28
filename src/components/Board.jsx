@@ -5,13 +5,17 @@ import { moveCard, moveColumn } from "../services/redux/actions";
 import "../static/styles/board.css";
 import { Button } from "./Button";
 import { Column } from "./Column";
+import { Link, useParams } from "react-router-dom";
 import "../static/styles/column.css";
 import "../static/styles/card.css";
 import "../static/styles/button.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export const Board = ({}) => {
   const dispatch = useDispatch();
-  const boardId = "board0";
+  const params = useParams();
+  const boardId = params.boardId;
   const board = useSelector((state) => state.board[boardId]);
   const [hideButton, setHideButton] = useState(false);
   useEffect(() => {
@@ -32,7 +36,13 @@ export const Board = ({}) => {
   };
   return (
     <div className="board-container">
-      <h1>Board Name</h1>
+      <div className="title-container">
+        <h1>{board.title}</h1>
+        <Link to={"/"}>
+          <FontAwesomeIcon className="big-icon" icon={faHouse}></FontAwesomeIcon>
+        </Link>
+      </div>
+
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="column">
           {(provided, snapshot) => (

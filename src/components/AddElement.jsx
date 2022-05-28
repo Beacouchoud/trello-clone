@@ -40,7 +40,7 @@ export const AddElement = ({ type, setEnableEdit, columnId, boardId }) => {
   };
   const createNewColumn = () => {
     let columnId = generateId("column");
-    dispatch(addColumn(boardId, columnId, columnTitle));
+    dispatch(addColumn(boardId, columnId, columnTitle || "title"));
     cleanValue();
   };
   const createNewBoard = () => {

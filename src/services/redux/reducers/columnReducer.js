@@ -19,8 +19,8 @@ export const column = (state = initialState, action) => {
     }
 
     case "REMOVE_COLUMN": {
-      const { id } = action.payload;
-      const { [id]: deletedColumn, ...restOfColumns } = state;
+      const { columnId } = action.payload;
+      const { [columnId]: deletedColumn, ...restOfColumns } = state;
       return restOfColumns;
     }
 

@@ -28,6 +28,7 @@ export const Column = ({ boardId, columnId, index }) => {
                 type={"column"}
                 setEnableEdit={setEnableEdit}
                 columnId={columnId}
+                boardId={boardId}
                 title={column.title}
               ></EditElement>
             )}

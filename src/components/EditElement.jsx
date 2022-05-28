@@ -52,11 +52,11 @@ export const EditElement = ({ type, setEnableEdit, boardId, text, title, name, c
     setEnableEdit(false);
   };
   return (
-    <div className="edit-container">
+    <div className={`edit-container edit-container-${type}`}>
       {type === "column" && (
         <>
-          <FontAwesomeIcon className="icon trash" icon="trash" onClick={() => dispatch(removeColumn(columnId))} />
-
+          <FontAwesomeIcon className="icon trash" icon="trash" onClick={() => dispatch(removeColumn(boardId, columnId))} />
+ 
           <div className="input-container column edit-column" onBlur={() => setEnableEdit(false)}>
             <input type={"text"} placeholder={text} value={columnTitle} ref={titleRef} onChange={handleTitle}></input>
           </div>

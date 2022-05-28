@@ -39,10 +39,11 @@ export const addColumn = (boardId, id, title) => {
   };
 };
 
-export const removeColumn = (columnId) => {
+export const removeColumn = (boardId, columnId) => {
   return {
     type: "REMOVE_COLUMN",
     payload: {
+      boardId,
       columnId,
     },
   };

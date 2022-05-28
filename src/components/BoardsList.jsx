@@ -18,6 +18,7 @@ export const BoardsList = ({ cardId, columnId, index }) => {
         <div className="boards-container">
           {console.log(boardsList)}
           {Object.keys(boardsList).map((boardId, index) => (
+            boardId.startsWith("board") &&
             <BoardElement boardId={boardId} key={boardId} index={index}></BoardElement>
           ))}
           <div className="button-container">
