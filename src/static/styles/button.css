@@ -76,6 +76,11 @@ textarea, input {
   display: flex;
   align-items: center;
   height: min-content;
+  margin-bottom: 20px;
+}
+
+.edit-container-board {
+  margin: 10px auto;
 }
 
 button:hover, .input-container:hover {

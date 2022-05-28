@@ -22,6 +22,8 @@
 .column-name {
   text-align: center;
   text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
 .edit-column {
