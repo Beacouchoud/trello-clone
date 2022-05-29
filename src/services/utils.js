@@ -1,16 +1,18 @@
 let id = 10;
 
-export const generateId = (prefix = "id", num = ++id) => {
-    return `${prefix}${num}`;
+export const generateId = async (prefix = "id", num = ++id) => {
+    return new Promise((resolve, reject) => {
+        resolve(`${prefix}${num}`)
+    })
 }
 
-export const generateSampleData = (store) => {
+export const generateSampleData = async (store) => {
     const date = new Date().toLocaleDateString("es-ES")
-    const firstBoardId = generateId("board", 0);
-    const secondBoardId = generateId("board", 7);
-    const firstColId = generateId("column", 1);
-    const secondColId = generateId("column", 2);
-    const thirdColId = generateId("column", 8);
+    const firstBoardId = await generateId("board", 0);
+    const secondBoardId = await generateId("board", 7);
+    const firstColId = await generateId("column", 1);
+    const secondColId = await generateId("column", 2);
+    const thirdColId = await generateId("column", 8);
     store.dispatch({
         type: "ADD_BOARD",
         payload: { 
@@ -32,7 +34,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: firstColId,
-            cardId: generateId("card",3),
+            cardId: await generateId("card",3),
             cardText: "Card nº1"
         }
     });
@@ -41,7 +43,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: firstColId,
-            cardId: generateId("card", 4),
+            cardId: await generateId("card", 4),
             cardText: "This is the second card"
         }
     });
@@ -58,7 +60,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: secondColId,
-            cardId: generateId("card", 5),
+            cardId: await generateId("card", 5),
             cardText: "Card 1"
         }
     });
@@ -67,7 +69,7 @@ export const generateSampleData = (store) => {
         type: "ADD_CARD",
         payload: {
             columnId: secondColId,
-            cardId: generateId("card", 6),
+            cardId: await generateId("card", 6),
             cardText: "Card number 2"
         }
     });

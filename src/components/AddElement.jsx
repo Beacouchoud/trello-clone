@@ -33,18 +33,18 @@ export const AddElement = ({ type, setEnableEdit, columnId, boardId }) => {
   const handleName = (ev) => {
     setBoardName(ev.target.value);
   }
-  const createNewCard = () => {
-    let cardId = generateId("card");
+  const createNewCard = async () => {
+    let cardId = await generateId("card");
     dispatch(addCard(columnId, cardId, cardText));
     cleanValue();
   };
-  const createNewColumn = () => {
-    let columnId = generateId("column");
+  const createNewColumn = async () => {
+    let columnId = await generateId("column");
     dispatch(addColumn(boardId, columnId, columnTitle || "title"));
     cleanValue();
   };
-  const createNewBoard = () => {
-    let boardId = generateId("board");
+  const createNewBoard = async () => {
+    let boardId = await generateId("board");
     let date = new Date().toLocaleDateString("es-ES");
     dispatch(addBoard(boardId, boardName, date));
     cleanValue();
