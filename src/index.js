@@ -10,7 +10,7 @@ import { Board } from "./components/Board";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <Routes>
           <Route path="/" element={<App />}/>
