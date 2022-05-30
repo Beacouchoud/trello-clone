@@ -63,6 +63,9 @@ The repository also includes a complete Readme complete, in addition.
 Clone the repository.
 In the project directory, you can run:
 ```
+npm install
+```
+```
 npm start
 ```
 Runs the app in the development mode.\
