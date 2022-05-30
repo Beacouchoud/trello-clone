@@ -43,6 +43,8 @@ This Trello clone allows you to have multiple boards, creating them, deleting th
 In addition, in each one we can create several columns, delete or edit them and reorganize them as we want.
 Finally, we have the cards. We can modify them as much as we want and move them comfortably through the drag and drop functionality.
 
+GitHub Pages: [Trello Clone](https://beacouchoud.github.io/trello-clone/)
+
 https://user-images.githubusercontent.com/34965770/171030296-ad9a9957-43fb-4217-9a40-07ace3c8556f.mp4
 
 ## Technologies
