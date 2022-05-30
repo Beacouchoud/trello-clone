@@ -36,6 +36,10 @@ Taking into account the requirements, we came to the conclusion that this would 
 - We must have enough tools to be able to delete tasks and lists.
 - As in Trello, the lists must be organized by columns, and internally the tasks must also be able to organize them internally.
 
+## Demo
+[↑ Table of contents](#table-of-contents)
+
+https://user-images.githubusercontent.com/34965770/171030296-ad9a9957-43fb-4217-9a40-07ace3c8556f.mp4
 
 ## Technologies
 [↑ Table of contents](#table-of-contents)
