@@ -6,7 +6,8 @@ A tech assestment part of the Frontend with React Bootcamp - Geekshubs.
 
 ![HTML5](https://img.shields.io/badge/-HTML5-ec6231)&nbsp;
 ![CSS3](https://img.shields.io/badge/-CSS3-2965f1)&nbsp;
-![JS ES6](https://img.shields.io/badge/-JS%20ES6-f7df1e)&nbsp;![REACT](https://img.shields.io/badge/-React-5ED3F3)&nbsp;
+![JS ES6](https://img.shields.io/badge/-JS%20ES6-f7df1e)&nbsp;
+![REACT](https://img.shields.io/badge/-React-5ED3F3)&nbsp;
 
 
 ## Table of Contents
