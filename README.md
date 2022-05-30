@@ -10,6 +10,7 @@ A tech assestment part of the Frontend with React Bootcamp - Geekshubs.
 ![REACT](https://img.shields.io/badge/-React-5ED3F3)&nbsp;
 ![Redux](https://img.shields.io/badge/-Redux-764abc)&nbsp;
 
+
 ## Table of Contents
 
 1. 🧐[Introduction](#introduction)
@@ -63,6 +64,9 @@ The repository also includes a complete Readme complete, in addition.
 
 Clone the repository.
 In the project directory, you can run:
+```
+npm install
+```
 ```
 npm start
 ```
