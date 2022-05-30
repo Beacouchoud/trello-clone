@@ -22,3 +22,12 @@
   width: auto;
   overflow: auto;
 }
+
+.icon-container {
+  padding: 5px;
+  margin: 5px;
+}
+
+.icon-plus-margin{
+  margin-right: 5px;
+}

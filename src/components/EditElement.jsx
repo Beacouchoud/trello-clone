@@ -14,21 +14,20 @@ export const EditElement = ({ type, setEnableEdit, boardId, text, title, name, c
   // useEffect(() => {
   //   dispatch(editCardText(cardId, cardText));
   // }, [cardText]);
-  const inputRef = useRef({ value: text });
+  const inputRef = useRef({value: text });
   const handleCardText = () => {
+
     setCardText(inputRef.current.value);
   };
 
-  const [columnTitle, setColumnTitle] = useState(title);
-  const changeCardText = ()=> {
+  const changeCardText = (ev)=> {
+    ev.stopPropagation()
     dispatch(editCardText(cardId, cardText));
     inputRef.current.value = "";
     setEnableEdit(false);
   }
-
-  // useEffect(() => {
-  //   dispatch(editColumnTitle(columnId, columnTitle || "Title"));
-  // }, [columnTitle]);
+  
+  const [columnTitle, setColumnTitle] = useState(title);
   const titleRef = useRef({ value: title });
   const handleTitle = () => {
     setColumnTitle(titleRef.current.value);
@@ -46,7 +45,6 @@ export const EditElement = ({ type, setEnableEdit, boardId, text, title, name, c
   }
   
   const changeBoardName = () => {
-    console.log("asfasdf");
     dispatch(editBoardName(boardId, boardName));
     nameRef.current.value = "";
     setEnableEdit(false);
@@ -73,12 +71,13 @@ export const EditElement = ({ type, setEnableEdit, boardId, text, title, name, c
                 type={"text"}
                 placeholder={text}
                 ref={inputRef}
-                value={text}
+                defaultValue={text}
                 onChange={handleCardText}
                 onBlur={handleCardText}
               ></textarea>
             </div>
-            <FontAwesomeIcon className="icon plus" icon="plus" onClick={changeCardText} />
+              <FontAwesomeIcon className="icon plus icon-plus-margin" icon="plus" onClick={changeCardText} />
+            
           </>
         </>
       )}

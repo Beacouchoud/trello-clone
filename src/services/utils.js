@@ -13,11 +13,12 @@ export const generateSampleData = async (store) => {
     const firstColId = await generateId("column", 1);
     const secondColId = await generateId("column", 2);
     const thirdColId = await generateId("column", 8);
+    const fourthColId = await generateId("column", 9);
     store.dispatch({
         type: "ADD_BOARD",
         payload: { 
             id: firstBoardId, 
-            title: "First Board",
+            title: "Bootcamp GeeksHubs",
             date: date
         }
     });
@@ -27,7 +28,7 @@ export const generateSampleData = async (store) => {
         payload: { 
             boardId: firstBoardId,
             id: firstColId, 
-            title: "First Column" }
+            title: "TODO" }
     });
 
     store.dispatch({
@@ -35,7 +36,7 @@ export const generateSampleData = async (store) => {
         payload: {
             columnId: firstColId,
             cardId: await generateId("card",3),
-            cardText: "Card nº1"
+            cardText: "Write readmes"
         }
     });
 
@@ -44,7 +45,7 @@ export const generateSampleData = async (store) => {
         payload: {
             columnId: firstColId,
             cardId: await generateId("card", 4),
-            cardText: "This is the second card"
+            cardText: "Make the repository public"
         }
     });
 
@@ -53,7 +54,7 @@ export const generateSampleData = async (store) => {
         payload: { 
             boardId: firstBoardId,
             id: secondColId, 
-            title: "Second column" }
+            title: "DONE" }
     });
 
     store.dispatch({
@@ -61,7 +62,7 @@ export const generateSampleData = async (store) => {
         payload: {
             columnId: secondColId,
             cardId: await generateId("card", 5),
-            cardText: "Card 1"
+            cardText: "Dynamic showcase"
         }
     });
 
@@ -70,7 +71,7 @@ export const generateSampleData = async (store) => {
         payload: {
             columnId: secondColId,
             cardId: await generateId("card", 6),
-            cardText: "Card number 2"
+            cardText: "Restaurant menu"
         }
     });
 
@@ -78,7 +79,7 @@ export const generateSampleData = async (store) => {
         type: "ADD_BOARD",
         payload: { 
             id: secondBoardId, 
-            title: "Second Board",
+            title: "Prepare vacations",
             date,
         }
     });
@@ -88,6 +89,38 @@ export const generateSampleData = async (store) => {
         payload: { 
             boardId: secondBoardId,
             id: thirdColId, 
-            title: "Second column" }
+            title: "Buy" }
+    });
+    
+    store.dispatch({
+        type: "ADD_CARD",
+        payload: {
+            columnId: thirdColId,
+            cardId: await generateId("card", 10),
+            cardText: "Airplane tickets"
+        }
+    });
+    store.dispatch({
+        type: "ADD_CARD",
+        payload: {
+            columnId: thirdColId,
+            cardId: await generateId("card", 12),
+            cardText: "sunscreen"
+        }
+    });
+    store.dispatch({
+        type: "ADD_COLUMN",
+        payload: { 
+            boardId: secondBoardId,
+            id: fourthColId, 
+            title: "Already packed" }
+    });
+    store.dispatch({
+        type: "ADD_CARD",
+        payload: {
+            columnId: fourthColId,
+            cardId: await generateId("card", 11),
+            cardText: "Bikinis"
+        }
     });
 };

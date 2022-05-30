@@ -43,7 +43,7 @@ export const board = (state = initialState, action) => {
       const newColumns = Array.from(state[boardId].columns);
       const [removedColumn] = newColumns.splice(oldId, 1);
       newColumns.splice(newId, 0, removedColumn);
-      return { ...state, columns: newColumns };
+      return { ...state, [boardId]: { ...state[boardId], columns: newColumns } };
     }
 
     default:
